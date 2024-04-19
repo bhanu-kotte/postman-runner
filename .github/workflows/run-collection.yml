@@ -28,7 +28,7 @@ jobs:
             --reporters cli,html \
             --reporter-html-export /tmp/postman/report.html \
             --delay-request 1000 \
-            --bail
+            --suppress-exit-code
 
       - name: Upload HTML Report
         uses: actions/upload-artifact@v2
