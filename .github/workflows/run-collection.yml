@@ -27,16 +27,10 @@ jobs:
             --iteration-data inputs.csv \
             --reporters cli,html \
             --reporter-html-export /tmp/postman/report.html \
-            --reporter-json-export /tmp/postman/report.json
+            --delay-request 1000
 
       - name: Upload HTML Report
         uses: actions/upload-artifact@v2
         with:
           name: postman-html-report
           path: /tmp/postman/report.html
-
-      - name: Upload JSON Report
-        uses: actions/upload-artifact@v2
-        with:
-          name: postman-json-report
-          path: /tmp/postman/report.json
