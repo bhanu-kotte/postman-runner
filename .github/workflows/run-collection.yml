@@ -19,7 +19,7 @@ jobs:
           node-version: '20'
 
       - name: Install Newman
-        run: npm install -g newman
+        run: npm install -g newman && npm install -g newman-reporter-html
 
       - name: Run Postman Collection
         run: |
@@ -28,8 +28,6 @@ jobs:
             --reporters cli,html \
             --reporter-html-export /tmp/postman/report.html \
             --reporter-json-export /tmp/postman/report.json
-        env:
-          HOST: ${{ secrets.HOST }}
 
       - name: Upload HTML Report
         uses: actions/upload-artifact@v2
