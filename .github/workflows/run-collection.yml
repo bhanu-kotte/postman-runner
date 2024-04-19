@@ -27,7 +27,7 @@ jobs:
             --iteration-data inputs.csv \
             --reporters cli,html \
             --reporter-html-export /tmp/postman/report.html \
-            --delay-request 1000
+            --delay-request 1000 --bail
 
       - name: Upload HTML Report
         uses: actions/upload-artifact@v2
