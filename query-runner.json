@@ -1,0 +1,52 @@
+{
+	"info": {
+		"_postman_id": "ad065761-5645-4ffc-8047-8b395282c903",
+		"name": "query-runner",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "air-events-prod",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Consumer-Key",
+						"value": "a9l7Pgq8P3JAiSJumn3WqGrxAoEoN9pL"
+					},
+					{
+						"key": "Cookie",
+						"value": "_abck=E2C52FC3F791E379714FA4A26A3F5E57~-1~YAAQRisoFwGAMr2OAQAAQaZ69QveXDDjGz7xmHIZC61jVJmdbF0B2dUjT8n2FtXd3ch3+3GtBV1HcBoK/v4jdlzNVm4zn5rgTfnLKNP8j5mvWW1MCNLzzBWst3KWRr5MmcU0U2G+cecMTHpwIe+zX6akof7FNk97yhl8V/xMARqG9O1OzkASpscfJtgFduU1GhYBDyCzuDxx5LaFeXJecu1L2mREpf0dytTPamWVtA3voYUUT0OCGdwP5z2nGUqGtVoh6Xk6Zz+iBBa+Vr8B476iD+KoN6206xH8XyT7q/pj7ADoNOaEt0SQfN0nDVuOxr+tGPRjIvG578VsWi/YNhEILpfuMPKaRbbdryVZ3B1A6ZyCquBWenQpOfmZipTQv2soSAcRBA==~-1~-1~-1; ak_bmsc=2FBF90E52F6EA1350AAF8382917FF967~000000000000000000000000000000~YAAQRisoFwKAMr2OAQAAQaZ69ReUhwoHg9z+N5CVgifbZqiGUCNhzbNOeP3UR+UWht/Gdt5V3F65TqRgNCK5G42E6f8n/g+tNLG7Sb6f/5xvr7UZngOF0OEetpHFIFKnbA7T5JWj7hZ1tiihp0vI5GD4Yjn8DJs4l5s/wrYH+hPLNRvFR7k611xG4OssbsNBOduR/7YF3qHg2vDeiUnyEVMHxAppypUpN+wrhzAQEt5Iff4A+A5Jrl0n+LjoaOyLj0Je36pNTu6NsbzSU/wlWioH6/nvf/5TIujVZshk2fXmehBT25kv9uliaJzJogfGu7XS/p7rDPjJ8yzRy7xHhFzr5tQxAxMU3klWPkgwkF8GHVT94bh6E/Smlw==; bm_sv=01B5387D4E28BD45B8BEC0AB827F3E01~YAAQRisoF5+GMr2OAQAA6N979RcjcfxGJ/vaBHvBfn+pYEiegaiE0BAod2MtJTHi7yt5xBm9fFDrcpNUJewLdQy4PDULGsYScGMSN3wmz6esqRxG/PT8aJ+boMuGnWTzVis34v97tKkkFxl/9GaDCZ6nxVnh3m7QiPIYKxtutUF4ErhNYr8tizYpfvjZPLPSQUUOdwrjtb5H+wh8wO9aq/D7kOu1xFkUtM54n6tKBPoLBiWhsEaALRPZB8RjCskp~1; bm_sz=91E798EF22823ED431CD596208C635C4~YAAQRisoFwOAMr2OAQAAQaZ69RebLPaZ4q2y3f/IayV4vOdO+GWrqYl53Elp4wfg+R5JPVizhXelAxT8W1SHjng2MFP8w4/Less55b/K9h9RtFZScDACYER6cQB8p70N4ys4fXdaRx3CuUKwGyjBgeF5x1hB5D0+o5kuCTasUUc2qm4EWTSz8t2mTg6A/6iAubfPEAFk3T6Eyd9vMkMiEJYrwRq2eNODZF3gp558o3orqJNos46xzc/DkcKQJn6fv7ZUiqnWYoF0RthYbFi9ipeF5qW+GB4EZvhC5P9+2lTD/kJdxOUzjGueU1HDbhtrJGcK64SGjwy3FHNemu1+H0wHouuiaTJE4QxOGBE=~3553585~4272183; akacd_IAM_PROD_AM=2177452799~rv=46~id=da64967d4d499d52f4d7e0551e91cd36"
+					}
+				],
+				"url": {
+					"raw": "https://alcl-air-event-query-ms.maersk-digital.net/events/{{tpdoc}}",
+					"protocol": "https",
+					"host": [
+						"alcl-air-event-query-ms",
+						"maersk-digital",
+						"net"
+					],
+					"path": [
+						"events",
+						"{{tpdoc}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

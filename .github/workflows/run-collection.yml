@@ -1,0 +1,44 @@
+name: Postman Collection Runner
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run_postman_collection:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install Newman
+        run: npm install -g newman
+
+      - name: Run Postman Collection
+        run: |
+          newman run query-runner.json \
+            --iteration-data inputs.csv \
+            --reporters cli,html \
+            --reporter-html-export /tmp/postman/report.html \
+            --reporter-json-export /tmp/postman/report.json
+        env:
+          HOST: ${{ secrets.HOST }}
+
+      - name: Upload HTML Report
+        uses: actions/upload-artifact@v2
+        with:
+          name: postman-html-report
+          path: /tmp/postman/report.html
+
+      - name: Upload JSON Report
+        uses: actions/upload-artifact@v2
+        with:
+          name: postman-json-report
+          path: /tmp/postman/report.json
